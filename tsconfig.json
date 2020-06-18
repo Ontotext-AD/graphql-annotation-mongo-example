@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "lib": [
+            "es2017",
+            "es7",
+            "es6"
+        ],
+        "allowJs": true,
+        "checkJs": true,
+        "declaration": true,
+        "outDir": "dist",
+        "strict": true,
+        "esModuleInterop": true,
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "types": ["node", "jest"],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "src/**/*.spec.ts",
+    ],
+    "include": ["src/**/*", "src/index.ts"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+}

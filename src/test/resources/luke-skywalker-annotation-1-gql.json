@@ -1,0 +1,39 @@
+{
+  "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1",
+  "__typename": "Annotation",
+  "confidence": 0.86321123,
+  "relevanceScore": 0.72243234,
+  "tagType": "ontoa:About",
+  "status": "ontoa:Suggestion",
+  "issued": "2018-09-27T08:29:18.118Z",
+  "motivation": "tagging",
+  "body": {
+    "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/body",
+    "__typename": "Body",
+    "source": {
+      "id": "https://swapi.co/resource/human/1",
+      "__typename": "Human"
+    },
+    "purpose": "tagging"
+  },
+  "target": {
+    "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target",
+    "__typename": "Target",
+    "selector": {
+      "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target/selector",
+      "__typename": "Selector",
+      "value": "substring(/html/body/div[1]/div[2]/div/div[2]/div/div/div[1]/div/p[4]/text(), 67, 14)"
+    },
+    "source": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/",
+    "state": {
+      "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target/state",
+      "__typename": "State",
+      "sourceDate": "2017-08-01T00:01:01.000Z"
+    }
+  },
+  "generator": {
+    "id": "platform:text-analytics",
+    "__typename": "Generator",
+    "name": "Ontotext Text Analytics"
+  }
+}

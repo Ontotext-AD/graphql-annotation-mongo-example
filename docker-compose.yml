@@ -1,0 +1,66 @@
+version: '3.6'
+
+services:
+
+  annotation-service:
+    build: .
+    ports:
+      - "4008:4008"
+    environment:
+      MONGO_URL: "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017/?replicaSet=${MONGO_REPLICA_SET_NAME}"
+      MONGO_SERVER_SELECTION_TIMEOUT: 10000
+      MONGO_CONNECT_WITH_NO_PRIMARY: "true"
+      MONGO_UNIFIED_TOPOLOGY: "true"
+    networks:
+      - platform_network
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:4.0
+    container_name: mongodb
+    hostname: mongodb
+    ports:
+      - "9997:27017"
+    restart: always
+    command: ["--replSet", "${MONGO_REPLICA_SET_NAME}", "--bind_ip_all"]
+    networks:
+      - platform_network
+    stop_grace_period: 30s
+    environment:
+      #MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      #MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_REPLICA_SET_NAME: ${MONGO_REPLICA_SET_NAME}
+    healthcheck:
+    #  test: test $$(echo "rs.initiate().ok || rs.status().ok" | mongo -u $${MONGO_INITDB_ROOT_USERNAME} -p $${MONGO_INITDB_ROOT_PASSWORD} --quiet) -eq 1
+      test: test $$(echo "rs.initiate().ok || rs.status().ok" | mongo --quiet) -eq 1
+      interval: 10s
+      start_period: 30s
+
+  mongo-express:
+    image: mongo-express:latest
+    ports:
+      - "4010:8081"
+    depends_on:
+      - mongodb
+    links:
+      - mongodb:mongo
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      #ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      #ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      ME_CONFIG_SITE_BASEURL: "/mongo-express"
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+      ME_CONFIG_OPTIONS_EDITORTHEME: "darcula"
+      ME_CONFIG_MONGODB_URL: "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017"
+      ME_CONFIG_OPTIONS_READONLY: "true"
+    networks:
+      - platform_network
+
+
+networks:
+  platform_network:
+    external:
+      name: platform_network
+

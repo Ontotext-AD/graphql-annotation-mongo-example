@@ -1,0 +1,25 @@
+<https://platform.ontotext.com/text-analytics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/activitystreams#Application> .
+<https://platform.ontotext.com/text-analytics> <http://xmlns.com/foaf/0.1/name> "Ontotext Text Analytics" .
+<https://swapi.co/resource/human/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://swapi.co/vocabulary/Character> .
+<https://swapi.co/resource/human/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://swapi.co/vocabulary/Human> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/body> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#SpecificResource> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/body> <http://www.w3.org/ns/oa#hasPurpose> <http://www.w3.org/ns/oa#tagging> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/body> <http://www.w3.org/ns/oa#hasSource> <https://swapi.co/resource/human/1> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target/selector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#XPathSelector> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target/selector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "substring(/html/body/div[1]/div[2]/div/div[2]/div/div/div[1]/div/p[4]/text(), 67, 14)" .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target/state> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#TimeState> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target/state> <http://www.w3.org/ns/oa#sourceDate> "2017-08-01T00:01:01Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target> <http://www.w3.org/ns/oa#hasSelector> <https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target/selector> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target> <http://www.w3.org/ns/oa#hasSource> <https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target> <http://www.w3.org/ns/oa#hasState> <https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target/state> .
+
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://ontology.ontotext.com/annotation#relevanceScore> "0.72243234"^^<http://www.w3.org/2001/XMLSchema#float> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://ontology.ontotext.com/annotation#status> <http://ontology.ontotext.com/annotation#Suggestion> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nifcore#confidence> "0.86321123"^^<http://www.w3.org/2001/XMLSchema#float> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://purl.org/dc/terms/issued> "2018-09-27T08:29:18.118Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://purl.org/dc/terms/type> <http://ontology.ontotext.com/annotation#About> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://www.w3.org/ns/activitystreams#generator> <https://platform.ontotext.com/text-analytics> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://www.w3.org/ns/oa#hasBody> <https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/body> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://www.w3.org/ns/oa#hasTarget> <https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1/target> .
+<https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/1> <http://www.w3.org/ns/oa#motivatedBy> <http://www.w3.org/ns/oa#tagging> .

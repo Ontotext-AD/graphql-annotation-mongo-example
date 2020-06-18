@@ -1,0 +1,76 @@
+{
+  "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/5",
+  "type": ["Annotation"],
+  "confidence": "0.86321123",
+  "relevanceScore": "0.72243234",
+  "tagType": "ontoa:About",
+  "status": "ontoa:Suggestion",
+  "body": {
+      "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/5/body",
+      "type": "SpecificResource",
+      "source": {
+        "id": "https://swapi.co/resource/human/1",
+        "type": ["Character", "Human"]
+      },
+      "purpose": "tagging"
+  },
+  "issued": "2018-09-27T08:29:18.118Z",
+  "generator": {
+      "id": "platform:text-analytics",
+      "type": "Software",
+      "name": "Ontotext Text Analytics"
+  },
+  "motivation": "tagging",
+  "target": {
+      "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/5/target",
+      "selector": {
+          "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/5/target/selector",
+          "type": "XPathSelector",
+          "value": "//*[@id=\"custom-template\"]/div[2]/div/div/div[1]/div/div[3]/p[1]/a"
+      },
+      "source": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/",
+      "state": {
+          "id": "https://www.ontotext.com/blog/the-rise-of-the-knowledge-graph/annotation/5/target/state",
+          "type": "TimeState",
+          "sourceDate": "2020-06-12T00:01:01Z"
+      }
+  },
+  "@context": ["http://www.w3.org/ns/anno.jsonld", {
+      "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nifcore#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "ann": "http://data.ontotext.com/annotation/",
+      "dc": "http://purl.org/dc/terms/",
+      "ontoa": "http://ontology.ontotext.com/annotation#",
+      "voc": "https://swapi.co/vocabulary/",
+      "resource": "http://data.ontotext.com/resource/",
+      "platform": "https://platform.ontotext.com/",
+      "Character": {
+        "@id": "voc:Character",
+        "@type": "@id"
+      },
+      "Human": {
+        "@id": "voc:Human",
+        "@type": "@id"
+      },
+      "confidence": {
+          "@id": "nif:confidence",
+          "@type": "xsd:float"
+      },
+      "relevanceScore": {
+          "@id": "ontoa:relevanceScore",
+          "@type": "xsd:float"
+      },
+      "status": {
+        "@id": "ontoa:status",
+        "@type": "@id"
+      },
+      "tagType": {
+          "@id": "dc:type",
+          "@type": "@id"
+      },
+      "issued": {
+        "@id": "dcterms:issued",
+        "@type": "xsd:dateTime"
+      }
+  }]
+}
